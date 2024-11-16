@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_project/widgets/dashboard_widget.dart';
 import 'package:responsive_project/widgets/side_menu_widget.dart';
 
 class MaainScreen extends StatelessWidget {
@@ -15,7 +16,7 @@ class MaainScreen extends StatelessWidget {
             child: SizedBox(
               child: SideMenuWidget(),
             )),
-        Expanded(flex: 7, child: Container(color: Colors.blue)),
+        Expanded(flex: 7, child: DashboardWidget()),
         Expanded(flex: 3, child: Container(color: Colors.green))
       ],
     )));
