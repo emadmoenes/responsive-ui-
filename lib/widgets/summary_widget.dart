@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:responsive_project/widgets/pie_chart_widget.dart';
+import 'package:responsive_project/widgets/scheduled_wedgit.dart';
 import 'package:responsive_project/widgets/summary_details.dart';
 
 class SummaryWidget extends StatelessWidget {
@@ -21,6 +22,10 @@ class SummaryWidget extends StatelessWidget {
           padding: const EdgeInsets.all(20.0),
           child: SummaryDetails(),
         ),
+        SizedBox(
+          height: 40,
+        ),
+        Scheduled(),
       ],
     ));
   }
