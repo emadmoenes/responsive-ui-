@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:responsive_project/const/constant.dart';
 import 'package:responsive_project/data/health_details.dart';
+import 'package:responsive_project/util/responsive.dart';
 import 'package:responsive_project/widgets/custom_card_widget.dart';
 
 class ActivityDetailsCard extends StatelessWidget {
@@ -13,10 +13,13 @@ class ActivityDetailsCard extends StatelessWidget {
       itemCount: healthDetails.healthData.length,
       shrinkWrap: true,
       physics: const ScrollPhysics(),
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 4, crossAxisSpacing: 15, mainAxisSpacing: 12.0),
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: Responsive.isMobile(context) ? 2 : 4,
+        crossAxisSpacing: Responsive.isMobile(context) ? 12 : 15,
+        mainAxisSpacing: 12.0,
+      ),
       itemBuilder: (context, index) => CustomCard(
-        color: backgroundColor,
+        color: Colors.grey,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
